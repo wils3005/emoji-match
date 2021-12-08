@@ -1,0 +1,129 @@
+{
+  "exclude": ["build/", "docs/", "node_modules/"],
+  "compilerOptions": {
+    // TYPE CHECKING ///////////////////////////////////////////////////////////
+    "allowUnreachableCode": false,
+    "allowUnusedLabels": false,
+    "exactOptionalPropertyTypes": true,
+    "noFallthroughCasesInSwitch": false,
+    "noImplicitOverride": false,
+    "noImplicitReturns": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "strict": true,
+
+    // MODULES /////////////////////////////////////////////////////////////////
+    // "allowUmdGlobalAccess"
+    // "baseUrl"
+    "module": "esnext",
+    "moduleResolution": "node",
+    // "noResolve"
+    // "paths"
+    "resolveJsonModule": true,
+    // "rootDir"
+    // "rootDirs"
+    // "typeRoots"
+    // "types"
+
+    // EMIT ////////////////////////////////////////////////////////////////////
+    // "declaration"
+    // "declarationDir"
+    // "declarationMap"
+    "downlevelIteration": true,
+    // "emitBOM"
+    // "emitDeclarationOnly"
+    // "importHelpers"
+    "importsNotUsedAsValues": "error",
+    // "inlineSourceMap"
+    // "inlineSources"
+    // "mapRoot"
+    // "newLine"
+    "noEmit": true,
+    // "noEmitHelpers"
+    "noEmitOnError": true,
+    // "outDir"
+    // "outFile"
+    // "preserveConstEnums"
+    // "preserveValueImports"
+    // "removeComments"
+    // "sourceMap"
+    // "sourceRoot"
+    // "stripInternal"
+    "allowJs": true,
+    "checkJs": true,
+    // "maxNodeModuleJsDepth"
+
+    // EDITOR SUPPORT //////////////////////////////////////////////////////////
+    // "disableSizeLimit"
+    // "plugins"
+
+    // INTEROP CONSTRAINTS /////////////////////////////////////////////////////
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    // "preserveSymlinks"
+
+    // BACKWARDS COMPATIBILITY /////////////////////////////////////////////////
+    // "noImplicitUseStrict"
+    // "noStrictGenericChecks"
+    // "suppressExcessPropertyErrors"
+    // "suppressImplicitAnyIndexErrors"
+
+    // LANGUAGE AND ENVIRONMENT ////////////////////////////////////////////////
+    // "emitDecoratorMetadata"
+    // "experimentalDecorators"
+    "jsx": "preserve",
+    // "jsxFactory"
+    // "jsxFragmentFactory"
+    // "jsxImportSource"
+    "lib": ["DOM", "ESNext"],
+    // "noLib"
+    // "reactNamespace"
+    "target": "es6",
+    // "useDefineForClassFields"
+
+    // COMPILER DIAGNOSTICS ////////////////////////////////////////////////////
+    // "diagnostics"
+    // "explainFiles"
+    // "extendedDiagnostics"
+    // "generateCpuProfile"
+    // "listEmittedFiles"
+    // "listFiles"
+    // "traceResolution"
+
+    // PROJECTS ////////////////////////////////////////////////////////////////
+    // "composite"
+    // "disableReferencedProjectLoad"
+    // "disableSolutionSearching"
+    // "disableSourceOfProjectReferenceRedirect"
+    // "incremental"
+    // "tsBuildInfoFile"
+
+    // OUTPUT FORMATTING ///////////////////////////////////////////////////////
+    // "noErrorTruncation"
+    // "preserveWatchOutput"
+    // "pretty"
+    // "skipDefaultLibCheck"
+    "skipLibCheck": true
+
+    // COMMAND LINE ////////////////////////////////////////////////////////////
+
+    // WATCH OPTIONS ///////////////////////////////////////////////////////////
+    // "assumeChangesOnlyAffectDirectDependencies"
+    // "watchFile"
+    // "watchDirectory"
+    // "fallbackPolling"
+    // "synchronousWatchDirectory"
+    // "excludeDirectories"
+    // "excludeFiles"
+
+    // TYPE ACQUISITION ////////////////////////////////////////////////////////
+    // "enable"
+    // "include"
+    // "exclude"
+    // "disableFilenameBasedTypeAcquisition"
+  }
+}
