@@ -1,7 +1,7 @@
 import { Display, GameObjects, Scene, Time, Types, Utils } from "phaser";
 import { z } from "zod";
 
-import { canvas005, canvas010, canvas050, canvas100 } from "../canvas-size";
+import { px } from "../px";
 
 export class MainGame extends Scene {
   private gameOverCallback = () => {
@@ -110,7 +110,7 @@ export class MainGame extends Scene {
   }
 
   create() {
-    this.add.image(canvas050, canvas050, "background");
+    this.add.image(px(0.5), px(0.5), "background");
 
     this.circle1 = this.add
       .circle(0, 0, 42)
@@ -124,18 +124,13 @@ export class MainGame extends Scene {
 
     this.emojis = this.add.group(emojiGroupCreateConfig);
     this.timerText = this.add.text(
-      canvas005,
-      canvas005,
+      px(0.05),
+      px(0.05),
       `${gameDuration}.00`,
       fontStyle
     );
 
-    this.scoreText = this.add.text(
-      canvas005,
-      canvas010,
-      "Points: 0",
-      fontStyle
-    );
+    this.scoreText = this.add.text(px(0.05), px(0.1), "Points: 0", fontStyle);
 
     const emojiSprites = this.emojis.getChildren();
     emojiSprites.forEach((x) => x.setInteractive());
@@ -268,11 +263,11 @@ const emojiGroupCreateConfig: Types.GameObjects.Group.GroupCreateConfig = {
   gridAlign: {
     width: 4,
     height: 4,
-    cellWidth: canvas100 * 0.18,
-    cellHeight: canvas100 * 0.18,
+    cellWidth: px(0.18),
+    cellHeight: px(0.18),
     position: Display.Align.TOP_LEFT,
-    x: canvas100 * 0.25,
-    y: canvas100 * 0.25,
+    x: px(0.25),
+    y: px(0.25),
   },
   visible: true,
 };
@@ -282,7 +277,7 @@ const fontStyle: Types.GameObjects.Text.TextStyle = {
   fontSize: "48",
   color: "#ffffff",
   fontStyle: "bold",
-  padding: { x: 16, y: 16 },
+  padding: { x: px(0.027), y: px(0.027) },
   shadow: {
     color: "#000000",
     fill: true,

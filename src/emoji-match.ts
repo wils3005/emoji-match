@@ -1,7 +1,8 @@
 import { CANVAS, Game, Types } from "phaser";
 import pino from "pino";
 
-import { canvas100 } from "./canvas-size";
+import "./emoji-match.css";
+import { px } from "./px";
 import { Boot, MainGame, MainMenu, Preloader } from "./scenes";
 
 const defaultCallback = (...args: unknown[]) => {
@@ -32,8 +33,8 @@ const windowLoadCallback = () => {
 
 const gameConfig: Types.Core.GameConfig = {
   type: CANVAS,
-  width: canvas100,
-  height: canvas100,
+  width: px(1),
+  height: px(1),
   backgroundColor: "#008eb0",
   parent: "phaser",
   scene: [Boot, Preloader, MainMenu, MainGame],
@@ -47,7 +48,7 @@ const logger = pino({
   timestamp: pino.stdTimeFunctions.isoTime,
 });
 
-const serviceWorkerUrl = "service-worker.js";
+const serviceWorkerUrl = "FE5EGPZN.js";
 
 const { name: globalName } = globalThis.constructor;
 

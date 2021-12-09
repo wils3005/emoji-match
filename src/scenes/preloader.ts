@@ -1,6 +1,6 @@
 import { GameObjects, Scene, Types } from "phaser";
 
-import { canvas050, canvasScale } from "../canvas-size";
+import { px, canvasScale } from "../px";
 
 export class Preloader extends Scene {
   loadText?: GameObjects.Text;
@@ -38,7 +38,7 @@ export class Preloader extends Scene {
 
   private setLoadText() {
     this.loadText = this.add
-      .text(canvas050, canvas050, "Loading ...", loadTextTextStyle)
+      .text(px(0.5), px(0.5), "Loading ...", loadTextTextStyle)
       .setOrigin(0.5)
       .setStroke("#203c5b", 6)
       .setShadow(2, 2, "#2d2d2d", 4, true, false)

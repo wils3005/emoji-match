@@ -3,12 +3,12 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "prebuild": "rimraf build/",
-    "build": "esbuild --bundle --minify --outfile=build/emoji-match.js src/index.ts",
-    "postbuild": "cp build/emoji-match.js docs/",
+    "prebuild": "rimraf docs/*.js docs/*.css",
+    "build": "esbuild --bundle --entry-names=[dir]/[hash] --minify --outdir=docs/ src/emoji-match.ts src/service-worker.ts",
     "check": "npm-check --save-exact --update",
-    "test": "eslint --fix src/ && tsc && npm run build",
-    "prepare": "husky install"
+    "lint": "eslint --fix src/",
+    "prepare": "husky install",
+    "test": "npm run lint && tsc && npm run build"
   },
   "dependencies": {
     "phaser": "^3.55.2",
@@ -16,6 +16,7 @@
     "zod": "^3.11.6"
   },
   "devDependencies": {
+    "@types/eslint": "^8.2.1",
     "@types/pino": "^7.0.5",
     "@typescript-eslint/eslint-plugin": "^5.6.0",
     "@typescript-eslint/parser": "^5.6.0",

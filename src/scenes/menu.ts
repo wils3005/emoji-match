@@ -1,7 +1,7 @@
 import { GameObjects, Scene, Types } from "phaser";
 import { z } from "zod";
 
-import { canvas050, canvasScale, canvas100 } from "../canvas-size";
+import { px, canvasScale } from "../px";
 
 export class MainMenu extends Scene {
   background?: GameObjects.Image;
@@ -29,24 +29,21 @@ export class MainMenu extends Scene {
 
   private addBackground() {
     this.background = this.add
-      .image(canvas050, canvas050, "background")
+      .image(px(0.5), px(0.5), "background")
       .setScale(canvasScale);
   }
 
   private addHighScoreText() {
-    const x = canvas100 * 0.05;
-    const y = canvas100 * 0.05;
-
     const text = `High Score: ${z
       .number()
       .parse(this.registry.get("highscore"))}`;
 
-    this.add.text(x, y, text, fontStyle).setScale(canvasScale);
+    this.add.text(px(0.05), px(0.05), text, fontStyle).setScale(canvasScale);
   }
 
   private addLogo() {
     this.logo = this.add
-      .image(canvas050, canvas050 - logoWidth, "logo")
+      .image(px(0.5), px(0.5) - logoWidth, "logo")
       .setScale(canvasScale);
   }
 
@@ -61,7 +58,7 @@ export class MainMenu extends Scene {
   private animateLogo() {
     this.tweens.add({
       targets: this.logo,
-      y: canvas100 * 0.5,
+      y: px(0.5),
       ease: "bounce.out",
       duration: 1200,
     });
@@ -79,7 +76,7 @@ const fontStyle: Types.GameObjects.Text.TextStyle = {
   fontSize: "48",
   color: "#ffffff",
   fontStyle: "bold",
-  padding: { x: 16, y: 16 },
+  padding: { x: px(0.027), y: px(0.027) },
   shadow: {
     color: "#000000",
     fill: true,
