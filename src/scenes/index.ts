@@ -1,4 +1,4 @@
 export * from "./boot";
-export * from "./main-game";
-export * from "./main-menu";
+export * from "./main";
+export * from "./menu";
 export * from "./preloader";

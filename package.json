@@ -3,16 +3,20 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "prebuild": "rimraf build/ && tsc",
+    "prebuild": "rimraf build/",
     "build": "esbuild --bundle --minify --outfile=build/emoji-match.js src/index.ts",
     "postbuild": "cp build/emoji-match.js docs/",
-    "check": "npm-check --save-exact --update"
+    "check": "npm-check --save-exact --update",
+    "test": "eslint --fix src/ && tsc && npm run build",
+    "prepare": "husky install"
   },
   "dependencies": {
     "phaser": "^3.55.2",
+    "pino": "^7.5.1",
     "zod": "^3.11.6"
   },
   "devDependencies": {
+    "@types/pino": "^7.0.5",
     "@typescript-eslint/eslint-plugin": "^5.6.0",
     "@typescript-eslint/parser": "^5.6.0",
     "esbuild": "^0.14.2",
@@ -20,6 +24,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^7.0.4",
     "npm-check": "^5.9.2",
     "prettier": "^2.5.1",
     "rimraf": "^3.0.2",
